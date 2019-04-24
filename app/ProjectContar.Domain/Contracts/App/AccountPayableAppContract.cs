@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ProjectContar.Domain.Utils.Interfaces;
+using System;
 
 namespace ProjectContar.Domain.Contracts.App
 {
     /// <summary>
     /// Account Payable app Actions.
     /// </summary>
-    public interface AccountPayableAppContract
+    public interface AccountPayableAppContract : IServiceNotification
     {
         /// <summary>
         /// Add Account Payable.
@@ -14,12 +14,10 @@ namespace ProjectContar.Domain.Contracts.App
         /// <param name="name">Account Name.</param>
         /// <param name="dueDate">Account Due Date.</param>
         /// <param name="amount">Account Amount to Pay.</param>
-        /// <param name="errors">Errors in add.</param>
         /// <returns>True if added with success/ False if not.</returns>
-        bool Add(
+        void Add(
             string name,
             DateTime? dueDate,
-            decimal amount,
-            ref List<string> errors);
+            decimal amount);
     }
 }

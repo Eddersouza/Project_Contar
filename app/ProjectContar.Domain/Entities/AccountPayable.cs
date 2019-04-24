@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ProjectContar.Domain.Utils.Errors;
+using System;
 
-namespace ProjectContar.Domain.Entity
+namespace ProjectContar.Domain.Entities
 {
     /// <summary>
     /// Represents the entity to Account Payable
     /// </summary>
-    public class AccountPayable
+    public class AccountPayable : Entity
     {
         /// <summary>
         /// Store Account Amount to Pay.
@@ -21,6 +22,9 @@ namespace ProjectContar.Domain.Entity
         /// Store Account Name.
         /// </summary>
         private string name;
+
+        public static ErrorDescription InvalidName =
+            new ErrorDescription("O Campo Nome é obrigatório.", new Warning());
 
         /// <summary>
         /// Create new empty Account Payable.
@@ -43,6 +47,8 @@ namespace ProjectContar.Domain.Entity
             this.name = name;
             this.dueDate = dueDate;
             this.amount = amount;
+
+            IsInvalidName(this.name, InvalidName);
         }
 
         /// <summary>

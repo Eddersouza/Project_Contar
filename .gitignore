@@ -1,0 +1,7 @@
+/.vs
+/app/ProjectContar.App/obj
+/app/ProjectContar.App/bin
+/app/ProjectContar.Domain/obj
+/app/ProjectContar.Domain/bin
+/tests/ProjectContar.Tests.Unitaries/obj
+/tests/ProjectContar.Tests.Unitaries/bin

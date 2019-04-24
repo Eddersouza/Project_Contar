@@ -1,16 +1,11 @@
-﻿using ProjectContar.Domain.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjectContar.Domain.Entities;
 
 namespace ProjectContar.Domain.Contracts.Repositories
 {
     /// <summary>
     /// Repository to Account Payable.
     /// </summary>
-    public interface AccountPayableRepositoryContract 
+    public interface AccountPayableRepositoryContract
         : BaseRepositoryContract<AccountPayable>
     {
     }

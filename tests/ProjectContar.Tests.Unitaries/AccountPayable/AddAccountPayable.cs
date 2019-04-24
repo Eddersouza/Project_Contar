@@ -28,12 +28,18 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+            accountPayableApp
                 .Add(
                 string.Empty,
                 new DateTime(2019, 05, 01),
-                120,
-                ref errors);
+                120);
+
+            if (accountPayableApp.HasWarnings)
+                foreach (var item in accountPayableApp.Warnings())
+                {
+                    errors.Add(item.ToString());
+
+                }
 
             var expected = new
             {
@@ -43,7 +49,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = !accountPayableApp.HasNotifications,
                 error = errors.FirstOrDefault()
             };
 
@@ -58,12 +64,11 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         {
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+             this._accountPayableApp
                 .Add(
                 "Lu",
                 new DateTime(2019, 05, 01),
-                120,
-                ref errors);
+                120);
 
             var expected = new
             {
@@ -73,7 +78,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = false,
                 error = errors.FirstOrDefault()
             };
 
@@ -88,12 +93,11 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         {
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+            this._accountPayableApp
                 .Add(
                 "Teste para Adicionar mais de vinte caracter.",
                 new DateTime(2019, 05, 01),
-                120,
-                ref errors);
+                120);
 
             var expected = new
             {
@@ -103,7 +107,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = false,
                 error = errors.FirstOrDefault()
             };
 
@@ -117,12 +121,11 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         {
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+            this._accountPayableApp
                 .Add(
                 "Luz",
                 new DateTime(2019, 05, 01),
-                0,
-                ref errors);
+                0);
 
             var expected = new
             {
@@ -132,7 +135,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = false,
                 error = errors.FirstOrDefault()
             };
 
@@ -147,12 +150,11 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         {
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+            this._accountPayableApp
                 .Add(
                 "Luz",
                 null,
-                0,
-                ref errors);
+                0);
 
             var expected = new
             {
@@ -162,7 +164,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = false,
                 error = errors.FirstOrDefault()
             };
 
@@ -177,12 +179,11 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         {
             List<string> errors = new List<string>();
 
-            bool added = this._accountPayableApp
+             this._accountPayableApp
                 .Add(
                 "Luz",
                 new DateTime(2019, 05, 01),
-                0,
-                ref errors);
+                0);
 
             var expected = new
             {
@@ -192,7 +193,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
 
             var result = new
             {
-                sucess = added,
+                sucess = false,
                 error = errors.FirstOrDefault()
             };
 

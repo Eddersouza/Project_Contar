@@ -36,8 +36,21 @@
     <Compile Include="Contracts\App\AccountPayableAppContract.cs" />
     <Compile Include="Contracts\Repositories\AccountPayableRepositoryContract.cs" />
     <Compile Include="Contracts\Repositories\BaseRepositoryContract.cs" />
-    <Compile Include="Entity\AccountPayable.cs" />
+    <Compile Include="Entities\AccountPayable.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Errors\Critical.cs" />
+    <Compile Include="Utils\Errors\Error.cs" />
+    <Compile Include="Utils\Errors\ErrorDescription.cs" />
+    <Compile Include="Utils\Errors\Information.cs" />
+    <Compile Include="Utils\Errors\Warning.cs" />
+    <Compile Include="Utils\Interfaces\Errors\ILevel.cs" />
+    <Compile Include="Utils\Interfaces\IDescription .cs" />
+    <Compile Include="Utils\Interfaces\INotification.cs" />
+    <Compile Include="Utils\Interfaces\IServiceNotification.cs" />
+    <Compile Include="Utils\Notifications\Description.cs" />
+    <Compile Include="Utils\Notifications\Notification.cs" />
+    <Compile Include="Utils\Notifications\Service.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

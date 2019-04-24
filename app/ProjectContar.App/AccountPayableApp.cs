@@ -1,28 +1,25 @@
 ﻿using ProjectContar.Domain.Contracts.App;
-using ProjectContar.Domain.Entity;
+using ProjectContar.Domain.Entities;
+using ProjectContar.Domain.Utils.Notifications;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectContar.App
 {
     public class AccountPayableApp
-        : AccountPayableAppContract
+        : Service, AccountPayableAppContract
     {
-        public bool Add(
+        public void Add(
             string name,
             DateTime? dueDate,
-            decimal amount,
-            ref List<string> errors)
+            decimal amount)
         {
             AccountPayable account = new AccountPayable(
-                name, 
-                dueDate.Value, 
+                name,
+                dueDate.Value,
                 amount);
 
-            return false;
+            NotificationEntity = account;
         }
     }
 }
