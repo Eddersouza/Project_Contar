@@ -6,7 +6,7 @@ namespace ProjectContar.Domain.Entities
     /// <summary>
     /// Represents the entity to Account Payable
     /// </summary>
-    public class AccountPayable : Entity
+    public class AccountPayable : EventNotificationEntity
     {
         /// <summary>
         /// Store Account Amount to Pay.
@@ -23,8 +23,8 @@ namespace ProjectContar.Domain.Entities
         /// </summary>
         private string name;
 
-        public static ErrorDescription InvalidName =
-            new ErrorDescription("O Campo Nome é obrigatório.", new Warning());
+        public static EventNotificationDescription InvalidName =
+            new EventNotificationDescription("O Campo Nome é obrigatório.", new EventNotificationWarning());
 
         /// <summary>
         /// Create new empty Account Payable.

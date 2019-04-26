@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace ProjectContar.Domain.Utils.Interfaces
 {
-    public interface INotification
+    public interface EventNotificationBaseContract
     {
         bool HasNotifications { get; }
         IList<object> List { get; }
 
-        void Add(Description error);
+        void Add(EventNotificationDescriptionBase error);
 
-        bool Includes(Description error);
+        bool Includes(EventNotificationDescriptionBase error);
     }
 }

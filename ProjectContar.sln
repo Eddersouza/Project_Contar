@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectContar.Tests.Unitaries", "tests\ProjectContar.Tests.Unitaries\ProjectContar.Tests.Unitaries.csproj", "{5D5F644F-8592-4919-ACD8-68A6BE4D50ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edrsys.EventNotification", "..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj", "{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{5D5F644F-8592-4919-ACD8-68A6BE4D50ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D5F644F-8592-4919-ACD8-68A6BE4D50ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D5F644F-8592-4919-ACD8-68A6BE4D50ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{C82E5CE4-DD8E-4159-8984-B9DEA252DB2C} = {5615704B-D33A-43DF-9245-7B937882B53B}
 		{EC9471AA-C001-4174-BEAD-8FB391246211} = {B7D6929F-B16D-4D31-9F0C-73475800EDB5}
 		{5D5F644F-8592-4919-ACD8-68A6BE4D50ED} = {730DDC05-D104-4EA4-AF29-0C305FA43AB5}
+		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D} = {719ED0F8-7B5F-4DF4-8872-0AD065003C3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51445420-8EAA-4A5A-B878-07CB7AE2A193}

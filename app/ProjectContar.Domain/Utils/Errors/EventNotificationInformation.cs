@@ -1,10 +1,15 @@
 ﻿using ProjectContar.Domain.Utils.Interfaces.Errors;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ProjectContar.Domain.Utils.Errors
 {
-    public class Warning : ILevel
+    public class EventNotificationInformation : EventNotificationLevel
     {
-        public Warning(string description = "Warning")
+        public EventNotificationInformation(string description = "Information")
         {
             Description = description;
         }

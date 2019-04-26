@@ -1,6 +1,6 @@
 ﻿namespace ProjectContar.Domain.Utils.Interfaces
 {
-    public interface IDescription
+    public interface EventNotificationDescriptionBaseContract
     {
         string Message { get; }
 

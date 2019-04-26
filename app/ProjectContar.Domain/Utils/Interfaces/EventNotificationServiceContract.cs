@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectContar.Domain.Utils.Interfaces
 {
-    public interface IServiceNotification
+    public interface EventNotificationServiceContract
     {
         bool HasNotifications { get; }
         bool HasErrors { get; }

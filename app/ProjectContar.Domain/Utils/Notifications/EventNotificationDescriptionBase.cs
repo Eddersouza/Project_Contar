@@ -2,9 +2,9 @@
 
 namespace ProjectContar.Domain.Utils.Notifications
 {
-    public abstract class Description : IDescription
+    public abstract class EventNotificationDescriptionBase : EventNotificationDescriptionBaseContract
     {
-        protected Description(string message, params string[] args)
+        protected EventNotificationDescriptionBase(string message, params string[] args)
         {
             Message = message;
 

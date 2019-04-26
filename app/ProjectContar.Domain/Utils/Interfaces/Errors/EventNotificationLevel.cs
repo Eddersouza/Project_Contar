@@ -1,6 +1,6 @@
 ﻿namespace ProjectContar.Domain.Utils.Interfaces.Errors
 {
-    public interface ILevel
+    public interface EventNotificationLevel
     {
         string Description { get; }
 

@@ -2,9 +2,9 @@
 
 namespace ProjectContar.Domain.Utils.Errors
 {
-    public class Critical : ILevel
+    public class EventNotificationCritical : EventNotificationLevel
     {
-        public Critical(string description = "Critical")
+        public EventNotificationCritical(string description = "Critical")
         {
             Description = description;
         }

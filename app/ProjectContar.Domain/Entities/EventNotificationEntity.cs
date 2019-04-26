@@ -7,26 +7,26 @@ using System.Threading.Tasks;
 
 namespace ProjectContar.Domain.Entities
 {
-    public class Entity
+    public class EventNotificationEntity
     {
-        public Error Errors { get; } = new Error();
+        public EventNotification EventNotification { get; } = new EventNotification();
 
         public virtual void Validate() { }
 
         protected void Fail(
             bool condition, 
-            ErrorDescription description)
+            EventNotificationDescription description)
         {
             if (condition)
-                Errors.Add(description);
+                EventNotification.Add(description);
         }
 
         public bool IsValid()
         {
-            return !Errors.HasErrors;
+            return !EventNotification.HasErrors;
         }
         
-        protected void IsInvalidName(string s, ErrorDescription error)
+        protected void IsInvalidName(string s, EventNotificationDescription error)
         {
             Fail(string.IsNullOrWhiteSpace(s), error);
         }        

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace ProjectContar.Domain.Utils.Errors
 {
-    public class ErrorDescription : Description
+    public class EventNotificationDescription : EventNotificationDescriptionBase
     {
-        public ILevel Level { get; }
+        public EventNotificationLevel Level { get; }
 
-        public ErrorDescription(
+        public EventNotificationDescription(
             string message, 
-            ILevel level, 
+            EventNotificationLevel level, 
             params string[] args)
             : base(message, args)
         {

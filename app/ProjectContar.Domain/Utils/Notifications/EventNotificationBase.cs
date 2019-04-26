@@ -4,17 +4,17 @@ using System.Linq;
 
 namespace ProjectContar.Domain.Utils.Notifications
 {
-    public abstract class Notification : INotification
+    public abstract class EventNotificationBase : EventNotificationBaseContract
     {
         public bool HasNotifications => List.Any();
         public IList<object> List { get; } = new List<object>();
 
-        public void Add(Description description)
+        public void Add(EventNotificationDescriptionBase description)
         {
             List.Add(description);
         }
 
-        public bool Includes(Description error)
+        public bool Includes(EventNotificationDescriptionBase error)
         {
             return List.Contains(error);
         }

@@ -6,7 +6,7 @@ namespace ProjectContar.Domain.Contracts.App
     /// <summary>
     /// Account Payable app Actions.
     /// </summary>
-    public interface AccountPayableAppContract : IServiceNotification
+    public interface AccountPayableAppContract : EventNotificationServiceContract
     {
         /// <summary>
         /// Add Account Payable.

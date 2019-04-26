@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace ProjectContar.App
 {
     public class AccountPayableApp
-        : Service, AccountPayableAppContract
+        : EventNotificationServices, AccountPayableAppContract
     {
         public void Add(
             string name,
