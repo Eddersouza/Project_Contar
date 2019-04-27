@@ -37,6 +37,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+      <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
+      <Name>edrsys.EventNotification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProjectContar.Domain\ProjectContar.Domain.csproj">
       <Project>{C82E5CE4-DD8E-4159-8984-B9DEA252DB2C}</Project>
       <Name>ProjectContar.Domain</Name>

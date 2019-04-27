@@ -1,4 +1,6 @@
-﻿using ProjectContar.Domain.Utils.Errors;
+﻿using edrsys.EventNotification;
+using edrsys.EventNotification.Entities;
+using edrsys.EventNotification.Levels;
 using System;
 
 namespace ProjectContar.Domain.Entities

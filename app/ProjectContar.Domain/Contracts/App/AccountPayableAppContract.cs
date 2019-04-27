@@ -1,4 +1,4 @@
-﻿using ProjectContar.Domain.Utils.Interfaces;
+﻿using edrsys.EventNotification.Contracts;
 using System;
 
 namespace ProjectContar.Domain.Contracts.App

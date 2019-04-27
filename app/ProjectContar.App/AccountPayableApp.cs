@@ -1,8 +1,7 @@
-﻿using ProjectContar.Domain.Contracts.App;
+﻿using edrsys.EventNotification;
+using ProjectContar.Domain.Contracts.App;
 using ProjectContar.Domain.Entities;
-using ProjectContar.Domain.Utils.Notifications;
 using System;
-using System.Collections.Generic;
 
 namespace ProjectContar.App
 {

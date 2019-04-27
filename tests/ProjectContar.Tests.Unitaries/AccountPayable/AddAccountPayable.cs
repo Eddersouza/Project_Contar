@@ -34,7 +34,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
                 new DateTime(2019, 05, 01),
                 120);
 
-            if (accountPayableApp.HasWarnings)
+            if (!accountPayableApp.IsValid)
                 foreach (var item in accountPayableApp.Warnings())
                 {
                     errors.Add(item.ToString());
