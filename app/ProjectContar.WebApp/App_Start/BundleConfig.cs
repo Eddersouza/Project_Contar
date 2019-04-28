@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace ProjectContar.WebApp
 {
@@ -13,6 +12,9 @@ namespace ProjectContar.WebApp
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/materialize").Include(
+                       "~/Scripts/materialize.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -29,6 +31,9 @@ namespace ProjectContar.WebApp
 
             bundles.Add(new StyleBundle("~/Content/FontAwesome").Include(
                     "~/Content/FontAwesome/all.css"));
+
+            bundles.Add(new StyleBundle("~/Content/materialize").Include(
+                   "~/Content/materialize.css"));
         }
     }
 }
