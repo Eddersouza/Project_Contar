@@ -5,3 +5,5 @@
 /app/ProjectContar.Domain/bin
 /tests/ProjectContar.Tests.Unitaries/obj
 /tests/ProjectContar.Tests.Unitaries/bin
+/app/ProjectContar.WebApp/obj
+/app/ProjectContar.WebApp/bin
