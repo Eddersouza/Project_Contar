@@ -124,6 +124,20 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FontAwesome\all.css" />
+    <Content Include="Content\FontAwesome\all.min.css" />
+    <Content Include="Content\FontAwesome\brands.css" />
+    <Content Include="Content\FontAwesome\brands.min.css" />
+    <Content Include="Content\FontAwesome\fontawesome.css" />
+    <Content Include="Content\FontAwesome\fontawesome.min.css" />
+    <Content Include="Content\FontAwesome\regular.css" />
+    <Content Include="Content\FontAwesome\regular.min.css" />
+    <Content Include="Content\FontAwesome\solid.css" />
+    <Content Include="Content\FontAwesome\solid.min.css" />
+    <Content Include="Content\FontAwesome\svg-with-js.css" />
+    <Content Include="Content\FontAwesome\svg-with-js.min.css" />
+    <Content Include="Content\FontAwesome\v4-shims.css" />
+    <Content Include="Content\FontAwesome\v4-shims.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -167,8 +181,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
