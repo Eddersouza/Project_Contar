@@ -34,23 +34,22 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
                 new DateTime(2019, 05, 01),
                 120);
 
-            if (!accountPayableApp.IsValid)
+            if (accountPayableApp.HasWarnings)
                 foreach (var item in accountPayableApp.Warnings())
                 {
                     errors.Add(item.ToString());
-
                 }
 
             var expected = new
             {
                 sucess = false,
-                error = "O Campo Nome é obrigatório."
+                error = true
             };
 
             var result = new
             {
                 sucess = !accountPayableApp.HasNotifications,
-                error = errors.FirstOrDefault()
+                error = errors.Contains("O Campo Nome é obrigatório.")
             };
 
             Assert.AreEqual(expected, result);
@@ -62,24 +61,32 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C2AddNewAccountPayableWithNameLessThanThreeCharacter()
         {
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+
             List<string> errors = new List<string>();
 
-             this._accountPayableApp
-                .Add(
-                "Lu",
-                new DateTime(2019, 05, 01),
-                120);
+            accountPayableApp
+               .Add(
+               "Lu",
+               new DateTime(2019, 05, 01),
+               120);
+
+            if (accountPayableApp.HasWarnings)
+                foreach (var item in accountPayableApp.Warnings())
+                {
+                    errors.Add(item.ToString());
+                }
 
             var expected = new
             {
                 sucess = false,
-                error = "O Campo Nome deve ser maior ou igual a 3 caracteres."
+                error = true
             };
 
             var result = new
             {
                 sucess = false,
-                error = errors.FirstOrDefault()
+                error = errors.Contains("O Campo Nome deve ser maior ou igual a 3 caracteres.")
             };
 
             Assert.AreEqual(expected, result);
@@ -91,24 +98,32 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C3AddNewAccountPayableWithNameGreaterThanTwentyCharacter()
         {
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+
             List<string> errors = new List<string>();
 
-            this._accountPayableApp
+            accountPayableApp
                 .Add(
                 "Teste para Adicionar mais de vinte caracter.",
                 new DateTime(2019, 05, 01),
                 120);
 
+            if (accountPayableApp.HasWarnings)
+                foreach (var item in accountPayableApp.Warnings())
+                {
+                    errors.Add(item.ToString());
+                }
+
             var expected = new
             {
                 sucess = false,
-                error = "O Campo Nome deve ser menor ou igual a vinte caracteres."
+                error = true
             };
 
             var result = new
             {
                 sucess = false,
-                error = errors.FirstOrDefault()
+                error = errors.Contains("O Campo Nome deve ser menor ou igual a 20 caracteres.")
             };
 
             Assert.AreEqual(expected, result);
@@ -119,24 +134,32 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C4AddNewAccountPayableWithValueEqualToZero()
         {
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+
             List<string> errors = new List<string>();
 
-            this._accountPayableApp
+            accountPayableApp
                 .Add(
                 "Luz",
                 new DateTime(2019, 05, 01),
                 0);
 
+            if (accountPayableApp.HasWarnings)
+                foreach (var item in accountPayableApp.Warnings())
+                {
+                    errors.Add(item.ToString());
+                }
+
             var expected = new
             {
                 sucess = false,
-                error = "O Campo Valor deve ser maior que 0."
+                error = true
             };
 
             var result = new
             {
                 sucess = false,
-                error = errors.FirstOrDefault()
+                error = errors.Contains("O Campo Valor deve ser maior que 0.")
             };
 
             Assert.AreEqual(expected, result);
@@ -148,24 +171,33 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C5AddNewAccountPayableWithEmptyDate()
         {
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+
             List<string> errors = new List<string>();
 
-            this._accountPayableApp
+            accountPayableApp
                 .Add(
                 "Luz",
                 null,
                 0);
 
+            if (accountPayableApp.HasWarnings)
+                foreach (var item in accountPayableApp.Warnings())
+                {
+                    errors.Add(item.ToString());
+
+                }
+
             var expected = new
             {
                 sucess = false,
-                error = "O Campo Valor deve ser maior que 0."
+                error = true
             };
 
             var result = new
             {
                 sucess = false,
-                error = errors.FirstOrDefault()
+                error = errors.Contains("O Campo Data não pode ser vazio.")
             };
 
             Assert.AreEqual(expected, result);
@@ -177,24 +209,33 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C7AddNewAccountPayableWithSuccess()
         {
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+
             List<string> errors = new List<string>();
 
-             this._accountPayableApp
-                .Add(
-                "Luz",
-                new DateTime(2019, 05, 01),
-                0);
+            accountPayableApp
+               .Add(
+               "Luz",
+               new DateTime(2019, 05, 01),
+               120);
+
+            if (accountPayableApp.HasInformations)
+                foreach (var item in accountPayableApp.Informations())
+                {
+                    errors.Add(item.ToString());
+
+                }
 
             var expected = new
             {
                 sucess = true,
-                error = "Conta Incluída com Sucesso."
+                error = true
             };
 
             var result = new
             {
-                sucess = false,
-                error = errors.FirstOrDefault()
+                sucess = true,
+                error = errors.Contains("Conta Incluída com Sucesso.")
             };
 
             Assert.AreEqual(expected, result);

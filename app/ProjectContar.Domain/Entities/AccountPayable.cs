@@ -11,6 +11,58 @@ namespace ProjectContar.Domain.Entities
     public class AccountPayable : EventNotificationEntity
     {
         /// <summary>
+        /// Minimun Length to Field name.
+        /// </summary>
+        public const int NameMinimunLength = 3;
+
+        /// <summary>
+        /// Maximun Length to Field name.
+        /// </summary>
+        public const int NameMaximunLength = 20;
+
+        /// <summary>
+        /// Warning to field Name less than minimum length.
+        /// </summary>
+        public static EventNotificationDescription FieldNameMustBeGreaterThan =
+            new EventNotificationDescription(
+                "O Campo Nome deve ser maior ou igual a {0} caracteres.",
+                new EventNotificationWarning(),
+                NameMinimunLength.ToString());
+
+        /// <summary>
+        /// Warning to field Name less than minimum length.
+        /// </summary>
+        public static EventNotificationDescription FieldNameMustBeLessThan =
+            new EventNotificationDescription(
+                "O Campo Nome deve ser menor ou igual a {0} caracteres.",
+                new EventNotificationWarning(),
+                NameMaximunLength.ToString());
+
+        /// <summary>
+        /// Warning to field Name empty.
+        /// </summary>
+        public static EventNotificationDescription RequiredFieldName =
+            new EventNotificationDescription(
+                "O Campo Nome é obrigatório.",
+                new EventNotificationWarning());
+
+        /// <summary>
+        /// Warning to field Amount Zero.
+        /// </summary>
+        public static EventNotificationDescription AmountDontBeZero =
+            new EventNotificationDescription(
+                "O Campo Valor deve ser maior que 0.",
+                new EventNotificationWarning());
+
+        /// <summary>
+        /// Warning to field Due Date empty.
+        /// </summary>
+        public static EventNotificationDescription DueDateDoNotEmpty =
+            new EventNotificationDescription(
+                "O Campo Data não pode ser vazio.",
+                new EventNotificationWarning());
+
+        /// <summary>
         /// Store Account Amount to Pay.
         /// </summary>
         private decimal amount;
@@ -18,15 +70,12 @@ namespace ProjectContar.Domain.Entities
         /// <summary>
         /// Store Account Due Date.
         /// </summary>
-        private DateTime dueDate;
+        private DateTime? dueDate;
 
         /// <summary>
         /// Store Account Name.
         /// </summary>
         private string name;
-
-        public static EventNotificationDescription InvalidName =
-            new EventNotificationDescription("O Campo Nome é obrigatório.", new EventNotificationWarning());
 
         /// <summary>
         /// Create new empty Account Payable.
@@ -43,14 +92,24 @@ namespace ProjectContar.Domain.Entities
         /// <param name="amount">Account Amount to Pay.</param>
         public AccountPayable(
             string name,
-            DateTime dueDate,
+            DateTime? dueDate,
             decimal amount)
         {
             this.name = name;
             this.dueDate = dueDate;
             this.amount = amount;
 
-            IsInvalidName(this.name, InvalidName);
+            TestFieldIsEmpty(this.name, RequiredFieldName);
+
+            if (this.IsValid())
+                TestCondition(this.Name.Length < NameMinimunLength, FieldNameMustBeGreaterThan);
+
+            if (this.IsValid())
+                TestCondition(this.Name.Length > NameMaximunLength, FieldNameMustBeLessThan);
+
+            TestCondition(this.amount == 0, AmountDontBeZero);
+
+            TestCondition(this.DueDate == null, DueDateDoNotEmpty);
         }
 
         /// <summary>
@@ -65,7 +124,7 @@ namespace ProjectContar.Domain.Entities
         /// <summary>
         /// Account Due Date.
         /// </summary>
-        public DateTime DueDate
+        public DateTime? DueDate
         {
             get { return dueDate; }
             set { dueDate = value; }
