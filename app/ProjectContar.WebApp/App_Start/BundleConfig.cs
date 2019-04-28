@@ -2,9 +2,15 @@
 
 namespace ProjectContar.WebApp
 {
+    /// <summary>
+    /// Bundle configuration.
+    /// </summary>
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
+        /// <summary>
+        /// Register bundles to use in system.
+        /// </summary>
+        /// <param name="bundles">Bundles in sistem.</param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
