@@ -1,44 +1,49 @@
-﻿
+﻿@using ProjectContar.WebApp.ViewModels.AccountPayables
+
+@model AccountPayableNewPage
 @{
     ViewBag.Title = "Nova";
 }
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h2 class="panel-title customBold">Nova Conta a Pagar</h2>
-    </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="input-field col s6">
-                <input class="tooltipped" data-position="top" id="Account_Name" maxlength="20" data-tooltip="Nome da Conta" type="text" />
-                <label>Nome</label>
-            </div>
+@using (Html.BeginForm("New", "AccountPayable", FormMethod.Post))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title customBold">Nova Conta a Pagar</h2>
         </div>
-
-        <div class="row">
-            <div class="input-field col s6">
-
-                <input class="datepicker tooltipped" data-position="top" id="Account_DueDate" data-tooltip="Data de Vencimento da Conta" type="text" />
-                <label>Data de Vencimento</label>
+        <div class="panel-body">
+            <div class="row">
+                <div class="input-field col s6">
+                    @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta" })
+                    <label>Nome</label>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    @Html.TextBoxFor(model => model.Item.DueDate, new { @class = "datepicker tooltipped", data_position = "top", id = "Account_DueDate", data_tooltip = "Data de Vencimento da Conta" })
+                    <label>Data de Vencimento</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    @Html.TextBoxFor(model => model.Item.Amount, new { @class = "currencyField tooltipped", data_position = "top", id = "Account_Amount", data_tooltip = "Valor da Conta" })
+                    <label>Valor</label>
+                </div>
+            </div>
+
         </div>
-
-        <div class="row">
-            <div class="input-field col s6">
-                <input class="currencyField tooltipped" data-position="top" id="Account_Amount" data-tooltip="Valor da Conta" type="text" />
-                <label>Valor</label>
-            </div>
+        <div class="panel-footer">
+            <button class="btn grey custom-button-120 tooltipped" data-position="top" id="clear_AccountPayable" data-tooltip="Limpa os dados digitados." type="button">
+                <i class="fas fa-eraser">&nbsp;&nbsp;</i>Limpar
+            </button>
+            <button class="btn btn-success custom-button-120 tooltipped" data-position="top" data-tooltip="Salva Nova Conta" type="submit">
+                <i class="fas fa-save">&nbsp;&nbsp;</i>Salvar
+            </button>
         </div>
     </div>
-    <div class="panel-footer">
-        <button class="btn grey custom-button-120 tooltipped" data-position="top" id="clear_AccountPayable" data-tooltip="Limpa os dados digitados." type="button">
-            <i class="fas fa-eraser">&nbsp;&nbsp;</i>Limpar
-        </button>
-        <button class="btn btn-success custom-button-120 tooltipped" data-position="top" data-tooltip="Salva Nova Conta" type="button">
-            <i class="fas fa-save">&nbsp;&nbsp;</i>Salvar
-        </button>
-    </div>
-</div>
+}
 
 @section scripts{
     <script src="~/Scripts/pages/pageAccountPayable.js"></script>

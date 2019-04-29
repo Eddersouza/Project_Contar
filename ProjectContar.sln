@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edrsys.EventNotification", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectContar.WebApp", "app\ProjectContar.WebApp\ProjectContar.WebApp.csproj", "{630B1BFE-4BEB-4DB3-87F6-DEBBE450329B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "edrsys.Utils.Extensions", "..\edrsys_Utils_Extensions\edrsys.Utils.Extensions\edrsys.Utils.Extensions.csproj", "{57705838-48DF-4824-A6A0-05BECC8072FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{630B1BFE-4BEB-4DB3-87F6-DEBBE450329B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{630B1BFE-4BEB-4DB3-87F6-DEBBE450329B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{630B1BFE-4BEB-4DB3-87F6-DEBBE450329B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57705838-48DF-4824-A6A0-05BECC8072FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57705838-48DF-4824-A6A0-05BECC8072FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57705838-48DF-4824-A6A0-05BECC8072FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57705838-48DF-4824-A6A0-05BECC8072FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{5D5F644F-8592-4919-ACD8-68A6BE4D50ED} = {730DDC05-D104-4EA4-AF29-0C305FA43AB5}
 		{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D} = {719ED0F8-7B5F-4DF4-8872-0AD065003C3E}
 		{630B1BFE-4BEB-4DB3-87F6-DEBBE450329B} = {B39FE8EE-9312-47F7-A7BC-FFBF0F22EBBC}
+		{57705838-48DF-4824-A6A0-05BECC8072FA} = {719ED0F8-7B5F-4DF4-8872-0AD065003C3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51445420-8EAA-4A5A-B878-07CB7AE2A193}

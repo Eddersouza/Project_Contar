@@ -119,6 +119,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AccountPayables\AccountPayableItem.cs" />
+    <Compile Include="ViewModels\AccountPayables\AccountPayableNewPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -193,11 +195,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\edrsys_Utils_Extensions\edrsys.Utils.Extensions\edrsys.Utils.Extensions.csproj">
+      <Project>{57705838-48DF-4824-A6A0-05BECC8072FA}</Project>
+      <Name>edrsys.Utils.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
