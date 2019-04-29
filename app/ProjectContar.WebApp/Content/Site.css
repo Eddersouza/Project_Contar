@@ -1,1 +1,13 @@
-﻿
+﻿.customBold {
+    font-weight: bold;
+    font-size:x-large;
+}
+
+.custom-button-120 {
+    width: 120px;
+}
+
+.datepicker-modal {
+    background-color: transparent;
+    box-shadow: none;
+}

@@ -11,7 +11,8 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-default">
+    
+    <nav class="navbar blue darken-4">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,11 +23,9 @@
                 </button>
                 @Html.ActionLink("Contar", "Index", "Home", null, new { @class = "navbar-brand" })
             </div>
-
-
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Adicionar", "New", "AccountPayable")</li>
                 </ul>
             </div>
         </div>
@@ -34,15 +33,22 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Contar</p>
-        </footer>
+       
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/materialize")
+    @Scripts.Render("~/bundles/datepicker/i18n")
+    <script src="~/Scripts/pages/contarSite.js"></script>
+    <script>
+
+        let layoutSite = contarSite();
+
+        $(document).ready(layoutSite.getSiteReadyDefaults);
+        
+    </script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
