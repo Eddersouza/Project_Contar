@@ -15,21 +15,21 @@
             <div class="row">
                 <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta" })
-                    <label>Nome</label>
+                    @Html.LabelFor(model=>model.Item.Name)
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.DueDate, new { @class = "datepicker tooltipped", data_position = "top", id = "Account_DueDate", data_tooltip = "Data de Vencimento da Conta" })
-                    <label>Data de Vencimento</label>
+                    @Html.LabelFor(model => model.Item.DueDate)
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.Amount, new { @class = "currencyField tooltipped", data_position = "top", id = "Account_Amount", data_tooltip = "Valor da Conta" })
-                    <label>Valor</label>
+                    @Html.LabelFor(model => model.Item.Amount)
                 </div>
             </div>
 
