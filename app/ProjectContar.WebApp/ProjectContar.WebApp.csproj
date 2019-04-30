@@ -51,6 +51,18 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleInjector, Version=4.5.1.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.5.1\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.5.1.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.4.5.1\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.5.1.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.Integration.Web.Mvc.4.5.1\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -113,6 +125,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SimpleInjectorConfig.cs" />
     <Compile Include="Controllers\AccountPayableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -121,6 +134,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AccountPayables\AccountPayableItem.cs" />
     <Compile Include="ViewModels\AccountPayables\AccountPayableNewPage.cs" />
+    <Compile Include="ViewModels\Shared\MessageView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -165,6 +179,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.maskMoney.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -192,6 +207,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AccountPayable\New.cshtml" />
+    <Content Include="Views\Shared\_Messages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -201,9 +217,21 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+      <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
+      <Name>edrsys.EventNotification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\edrsys_Utils_Extensions\edrsys.Utils.Extensions\edrsys.Utils.Extensions.csproj">
       <Project>{57705838-48DF-4824-A6A0-05BECC8072FA}</Project>
       <Name>edrsys.Utils.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectContar.Domain\ProjectContar.Domain.csproj">
+      <Project>{C82E5CE4-DD8E-4159-8984-B9DEA252DB2C}</Project>
+      <Name>ProjectContar.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectContar.IoC\ProjectContar.IoC.csproj">
+      <Project>{3689EE25-AEE8-4F49-A26C-C47CBE84CBE7}</Project>
+      <Name>ProjectContar.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -13,11 +13,7 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
     [TestFixture]
     public class AddAccountPayable
     {
-        /// <summary>
-        /// Store Account Payable App instance.
-        /// </summary>
-        private readonly AccountPayableAppContract _accountPayableApp;
-
+      
         /// <summary>
         /// Try add new account with field Name empty.
         /// </summary>

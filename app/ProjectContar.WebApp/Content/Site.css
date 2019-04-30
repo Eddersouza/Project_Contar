@@ -1,10 +1,15 @@
-﻿.customBold {
+﻿.custom-message-font {
     font-weight: bold;
-    font-size:x-large;
+    font-size: larger;
 }
 
 .custom-button-120 {
     width: 120px;
+}
+
+.custom-panel-title {
+    font-weight: bold;
+    font-size: x-large;
 }
 
 .datepicker-modal {

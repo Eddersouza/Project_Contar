@@ -15,7 +15,8 @@ namespace ProjectContar.WebApp
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.maskMoney.js"));
+                        "~/Scripts/jquery.maskMoney.js",
+                        "~/Scripts/jquery.blockUI.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

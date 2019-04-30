@@ -1,4 +1,6 @@
-﻿namespace ProjectContar.WebApp.ViewModels.AccountPayables
+﻿using ProjectContar.WebApp.ViewModels.Shared;
+
+namespace ProjectContar.WebApp.ViewModels.AccountPayables
 {
     /// <summary>
     /// Represents view to page new Account Payable.
@@ -17,5 +19,10 @@
         /// Represents the Account Payable data.
         /// </summary>
         public AccountPayableItem Item { get; set; }
+
+        /// <summary>
+        /// Message to page actions.
+        /// </summary>
+        public MessageView Message { get; set; }
     }
 }

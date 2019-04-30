@@ -4,30 +4,30 @@
 @{
     ViewBag.Title = "Nova";
 }
-
-@using (Html.BeginForm("New", "AccountPayable", FormMethod.Post))
+@Html.Partial("_Messages", Model.Message)
+@using (Html.BeginForm("New", "AccountPayable", FormMethod.Post, new { id = "frmNewAccountPayable" }))
 {
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="panel-title customBold">Nova Conta a Pagar</h2>
+            <h2 class="panel-title custom-panel-title">Nova Conta a Pagar</h2>
         </div>
         <div class="panel-body">
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta" })
                     <label>Nome</label>
                 </div>
             </div>
 
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.DueDate, new { @class = "datepicker tooltipped", data_position = "top", id = "Account_DueDate", data_tooltip = "Data de Vencimento da Conta" })
                     <label>Data de Vencimento</label>
                 </div>
             </div>
 
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col-md-6 col-sm-12">
                     @Html.TextBoxFor(model => model.Item.Amount, new { @class = "currencyField tooltipped", data_position = "top", id = "Account_Amount", data_tooltip = "Valor da Conta" })
                     <label>Valor</label>
                 </div>
@@ -52,10 +52,16 @@
         let fieldName = $('#Account_Name');
         let fieldDueDate = $('#Account_DueDate');
         let fieldAmount = $('#Account_Amount');
+        let formfrmNewAccountPayable = $('#frmNewAccountPayable');
 
         let pageAccountPayableObj = pageAccountPayable(fieldName, fieldDueDate, fieldAmount);
 
+        function _newAccountPayableSubmmit() {
+            $.blockUI({ message: '<h4>Aguarde...</h4>' });
+        }
+
         $('#clear_AccountPayable').on('click', pageAccountPayableObj.clearFields);
+        $('#frmNewAccountPayable').on('submit', _newAccountPayableSubmmit);
 
     </script>
 }
