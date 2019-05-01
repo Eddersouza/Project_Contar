@@ -14,7 +14,7 @@ namespace ProjectContar.Domain.Contracts.Repositories
         /// Create entity in repository.
         /// </summary>
         /// <param name="entity">Object entity to create.</param>
-        void Create(Entity entity);
+        bool Create(Entity entity);
 
         /// <summary>
         /// Get entities by expression filter.

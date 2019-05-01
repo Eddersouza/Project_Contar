@@ -1,11 +1,14 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using ProjectContar.App;
 using ProjectContar.Domain.Contracts.App;
+using ProjectContar.Domain.Contracts.Repositories;
+using ProjectContar.Domain.Entities;
+using ProjectContar.Tests.Unitaries.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace ProjectContar.Tests.Unitaries.AccountPayable
+namespace ProjectContar.Tests.Unitaries.AccountPayables
 {
     /// <summary>
     /// Represents the test to Add new Account Payable.
@@ -13,14 +16,23 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
     [TestFixture]
     public class AddAccountPayable
     {
-      
+        /// <summary>
+        /// Create new class account Payable.
+        /// </summary>
+        public AddAccountPayable()
+        {
+        }
+
         /// <summary>
         /// Try add new account with field Name empty.
         /// </summary>
         [Test]
         public void C1AddNewAccountPayableWithNameEmpty()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            Mock<AccountPayableRepositoryContract> mockAccountRepository =
+              new Mock<AccountPayableRepositoryContract>();
+
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -57,7 +69,10 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C2AddNewAccountPayableWithNameLessThanThreeCharacter()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            Mock<AccountPayableRepositoryContract> mockAccountRepository =
+             new Mock<AccountPayableRepositoryContract>();
+
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -94,7 +109,10 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C3AddNewAccountPayableWithNameGreaterThanTwentyCharacter()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            Mock<AccountPayableRepositoryContract> mockAccountRepository =
+             new Mock<AccountPayableRepositoryContract>();
+
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -130,7 +148,10 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C4AddNewAccountPayableWithValueEqualToZero()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            Mock<AccountPayableRepositoryContract> mockAccountRepository =
+             new Mock<AccountPayableRepositoryContract>();
+
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -167,7 +188,10 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C5AddNewAccountPayableWithEmptyDate()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            Mock<AccountPayableRepositoryContract> mockAccountRepository =
+             new Mock<AccountPayableRepositoryContract>();
+
+            AccountPayableAppContract accountPayableApp = new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -181,7 +205,6 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
                 foreach (var item in accountPayableApp.Warnings())
                 {
                     errors.Add(item.ToString());
-
                 }
 
             var expected = new
@@ -205,7 +228,12 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
         [Test]
         public void C7AddNewAccountPayableWithSuccess()
         {
-            AccountPayableAppContract accountPayableApp = new AccountPayableApp();
+            IList<AccountPayable> Accounts = new List<AccountPayable>();
+
+            Mock<AccountPayableRepositoryContract> mockAccountRepository = new AccountPayableRepositoryMock().CreateRepository(Accounts);
+
+            AccountPayableAppContract accountPayableApp =
+                new AccountPayableApp(mockAccountRepository.Object);
 
             List<string> errors = new List<string>();
 
@@ -219,7 +247,6 @@ namespace ProjectContar.Tests.Unitaries.AccountPayable
                 foreach (var item in accountPayableApp.Informations())
                 {
                     errors.Add(item.ToString());
-
                 }
 
             var expected = new
