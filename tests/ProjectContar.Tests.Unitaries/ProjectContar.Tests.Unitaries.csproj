@@ -67,8 +67,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
-      <Project>{da2f6b99-aa8a-4bce-ab0f-60caebc13b4d}</Project>
+    <ProjectReference Include="..\..\..\edrsys_Utils\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+      <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
       <Name>edrsys.EventNotification</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\app\ProjectContar.App\ProjectContar.App.csproj">

@@ -46,7 +46,11 @@ namespace ProjectContar.App
                 amount);
 
             if (account.IsValid())
-                created = this._accountPayableRepository.Create(account);
+            {
+                this._accountPayableRepository.Create(account);
+                created = this._accountPayableRepository.SaveChanges();
+
+            }
 
             if (created)
                 account.EventNotification.Add(NewAccountPayableAdd);

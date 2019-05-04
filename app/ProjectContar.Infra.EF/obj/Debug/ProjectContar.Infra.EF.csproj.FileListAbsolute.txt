@@ -1,0 +1,16 @@
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\ProjectContar.Infra.EF.dll.config
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\ProjectContar.Infra.EF.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\ProjectContar.Infra.EF.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\EntityFramework.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\ProjectContar.Domain.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\edrsys.EventNotification.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\ProjectContar.Domain.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\EntityFramework.xml
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\bin\Debug\edrsys.EventNotification.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\obj\Debug\ProjectContar.Infra.EF.csprojResolveAssemblyReference.cache
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\obj\Debug\ProjectContar.Infra.EF.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\obj\Debug\ProjectContar.Infra.EF.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\obj\Debug\ProjectContar.Infra.EF.Migrations.AddInitialDB.resources
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.Infra.EF\obj\Debug\ProjectContar.Infra.EF.csproj.GenerateResource.Cache

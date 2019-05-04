@@ -46,6 +46,14 @@
       <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -217,11 +225,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+    <ProjectReference Include="..\..\..\edrsys_Utils\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
       <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
       <Name>edrsys.EventNotification</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\edrsys_Utils_Extensions\edrsys.Utils.Extensions\edrsys.Utils.Extensions.csproj">
+    <ProjectReference Include="..\..\..\edrsys_Utils\edrsys_Utils_Extensions\edrsys.Utils.Extensions\edrsys.Utils.Extensions.csproj">
       <Project>{57705838-48DF-4824-A6A0-05BECC8072FA}</Project>
       <Name>edrsys.Utils.Extensions</Name>
     </ProjectReference>

@@ -37,14 +37,14 @@
     <Compile Include="Contracts\Repositories\AccountPayableRepositoryContract.cs" />
     <Compile Include="Contracts\Repositories\BaseRepositoryContract.cs" />
     <Compile Include="Entities\AccountPayable.cs" />
+    <Compile Include="Entities\Base\Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+    <ProjectReference Include="..\..\..\edrsys_Utils\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
       <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
       <Name>edrsys.EventNotification</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

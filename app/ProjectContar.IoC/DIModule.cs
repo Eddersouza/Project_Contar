@@ -1,5 +1,8 @@
 ﻿using ProjectContar.App;
 using ProjectContar.Domain.Contracts.App;
+using ProjectContar.Domain.Contracts.Repositories;
+using ProjectContar.Infra.EF.Contexts;
+using ProjectContar.Infra.EF.Repositories;
 using SimpleInjector;
 
 namespace ProjectContar.IoC
@@ -27,9 +30,9 @@ namespace ProjectContar.IoC
             // Domain
 
             //// Base
-            // container.Register<UnitOfWorkContrato, UnitOfWork>(lifestyle);
-            // container.Register(typeof(BaseRepositoryContract<>), typeof(BaseRepository<>), lifestyle);
-            // container.Register<DECONDB2Context>(lifestyle);
+            container.Register<AccountPayableRepositoryContract, AccountPayableRepository>(lifestyle);
+            container.Register(typeof(BaseRepositoryContract<>), typeof(BaseRepository<>), lifestyle);
+            container.Register<ContarDBMSSQL>(lifestyle);
             container.Verify();
         }
     }

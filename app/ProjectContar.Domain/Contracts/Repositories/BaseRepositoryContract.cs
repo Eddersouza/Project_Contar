@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 namespace ProjectContar.Domain.Contracts.Repositories
 {
     /// <summary>
-    /// Contract to Base Repository.
+    /// Base Repository.
     /// </summary>
     public interface BaseRepositoryContract<Entity> : IDisposable
         where Entity : class
@@ -14,7 +14,7 @@ namespace ProjectContar.Domain.Contracts.Repositories
         /// Create entity in repository.
         /// </summary>
         /// <param name="entity">Object entity to create.</param>
-        bool Create(Entity entity);
+        void Create(Entity entity);
 
         /// <summary>
         /// Get entities by expression filter.
@@ -29,5 +29,10 @@ namespace ProjectContar.Domain.Contracts.Repositories
         /// <param name="ids">Entity id(s) to get.</param>
         /// <returns>Object Entity.</returns>
         Entity Get(object[] ids);
+
+        /// <summary>
+        /// Save the context changes.
+        /// </summary>
+        bool SaveChanges();
     }
 }

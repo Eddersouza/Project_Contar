@@ -11,3 +11,7 @@ C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\Project
 C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\obj\Debug\ProjectContar.IoC.csprojResolveAssemblyReference.cache
 C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\obj\Debug\ProjectContar.IoC.dll
 C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\obj\Debug\ProjectContar.IoC.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\bin\Debug\ProjectContar.Infra.EF.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\bin\Debug\EntityFramework.dll
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\bin\Debug\ProjectContar.Infra.EF.pdb
+C:\Users\f0fp0197\Documents\projPessoal\Projeto_Geral\Project_Contar\app\ProjectContar.IoC\bin\Debug\EntityFramework.xml

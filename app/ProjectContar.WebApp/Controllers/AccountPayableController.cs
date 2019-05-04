@@ -50,9 +50,6 @@ namespace ProjectContar.WebApp.Controllers
         [Route("nova")]
         public ActionResult New(AccountPayableNewPage view)
         {
-            DateTime? date = view.Item.DueDate.ToNullableDate();
-            decimal amount = view.Item.Amount.ToDecimal();
-
             try
             {
                 this._accountPayableApp.Add(
@@ -62,7 +59,7 @@ namespace ProjectContar.WebApp.Controllers
 
                 view.Message = new MessageView(this._accountPayableApp);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 view.Message = new MessageView();
                 view.Message.Errors.Add("Ocorreu um erro ao executar a ação, tente novamente ou entre em contato com o administrador.");

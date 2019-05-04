@@ -44,7 +44,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
+    <ProjectReference Include="..\..\..\edrsys_Utils\edrsys_EventNotification\edrsys.EventNotification\edrsys.EventNotification.csproj">
       <Project>{DA2F6B99-AA8A-4BCE-AB0F-60CAEBC13B4D}</Project>
       <Name>edrsys.EventNotification</Name>
     </ProjectReference>
@@ -55,6 +55,10 @@
     <ProjectReference Include="..\ProjectContar.Domain\ProjectContar.Domain.csproj">
       <Project>{C82E5CE4-DD8E-4159-8984-B9DEA252DB2C}</Project>
       <Name>ProjectContar.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectContar.Infra.EF\ProjectContar.Infra.EF.csproj">
+      <Project>{096FF203-D151-41D4-B14E-0ED9736CF558}</Project>
+      <Name>ProjectContar.Infra.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
