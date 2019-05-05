@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace ProjectContar.WebApp.ViewModels.AccountPayables
 {
@@ -12,6 +13,22 @@ namespace ProjectContar.WebApp.ViewModels.AccountPayables
         /// </summary>
         public AccountPayableItem()
         {
+        }
+
+        /// <summary>
+        /// Create new item Account Payable.
+        /// </summary>
+        /// <param name="name">Name to Account.</param>
+        /// <param name="dueDate">Due Date to Account.</param>
+        /// <param name="amount">Amount account.</param>
+        public AccountPayableItem(
+            string name,
+            DateTime dueDate,
+            decimal amount)
+        {
+            this.Name = name;
+            this.DueDate = dueDate.ToShortDateString();
+            this.Amount = amount.ToString();
         }
 
         /// <summary>

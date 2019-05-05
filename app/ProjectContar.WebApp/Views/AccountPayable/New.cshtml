@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = "Nova";
 }
-@Html.Partial("_Messages", Model.Message)
+@Html.Partial("_Messages")
 @using (Html.BeginForm("New", "AccountPayable", FormMethod.Post, new { id = "frmNewAccountPayable" }))
 {
     <div class="panel panel-default">
@@ -14,7 +14,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="input-field col-md-6 col-sm-12">
-                    @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta" })
+                    @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta", @data_length = "20" })
                     @Html.LabelFor(model=>model.Item.Name)
                 </div>
             </div>
@@ -60,6 +60,7 @@
             $.blockUI({ message: '<h4>Aguarde...</h4>' });
         }
 
+        fieldName.characterCounter();
         $('#clear_AccountPayable').on('click', pageAccountPayableObj.clearFields);
         $('#frmNewAccountPayable').on('submit', _newAccountPayableSubmmit);
 

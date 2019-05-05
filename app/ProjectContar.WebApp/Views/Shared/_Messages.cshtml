@@ -1,34 +1,45 @@
 ﻿@using ProjectContar.WebApp.ViewModels.Shared
 
-@model MessageView
+@{
+    MessageView message = new MessageView();
 
-@if (Model.Information.Any())
+    var tempMessages = TempData["Messages_Contar"];
+
+    TempData["Messages_Contar"] = null;
+
+    if (tempMessages != null)
+    {
+        message = tempMessages as MessageView;
+    }
+}
+
+@if (message.Information.Any())
 {
     <div class="alert alert-success custom-message-font" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        @foreach (var item in Model.Information)
+        @foreach (var item in message.Information)
         {
             @item @:<br />
         }
     </div>
 }
 
-@if (Model.Warnings.Any())
+@if (message.Warnings.Any())
 {
     <div class="alert alert-warning custom-message-font" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        @foreach (var item in Model.Warnings)
+        @foreach (var item in message.Warnings)
         {
             @item @:<br />
         }
     </div>
 }
 
-@if (Model.Errors.Any())
+@if (message.Errors.Any())
 {
     <div class="alert alert-danger custom-message-font" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        @foreach (var item in Model.Errors)
+        @foreach (var item in message.Errors)
         {
             @item
         }

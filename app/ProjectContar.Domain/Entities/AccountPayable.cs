@@ -108,12 +108,11 @@ namespace ProjectContar.Domain.Entities
         /// <param name="amount">Account Amount to Pay.</param>
         public AccountPayable(
             string name,
-            DateTime? dueDate,
-            decimal amount) : this()
+            DateTime? dueDate
+            ) : this()
         {
             this.name = name;
             this.dueDate = dueDate;
-            this.amount = amount;
 
             TestFieldIsEmpty(this.name, RequiredFieldName);
 
@@ -123,9 +122,23 @@ namespace ProjectContar.Domain.Entities
             if (this.IsValid())
                 TestCondition(this.Name.Length > NameMaximunLength, FieldNameMustBeLessThan);
 
-            TestCondition(this.amount == 0, AmountDontBeZero);
-
             TestCondition(this.DueDate == null, DueDateDoNotEmpty);
+        }
+
+        /// <summary>
+        /// Create new Account Payable.
+        /// </summary>
+        /// <param name="name">Account Name.</param>
+        /// <param name="dueDate">Account Due Date.</param>
+        /// <param name="amount">Account Amount to Pay.</param>
+        public AccountPayable(
+            string name,
+            DateTime? dueDate,
+            decimal amount) : this(name, dueDate)
+        {
+            this.amount = amount;
+                        
+            TestCondition(this.amount == 0, AmountDontBeZero);            
         }
 
         /// <summary>

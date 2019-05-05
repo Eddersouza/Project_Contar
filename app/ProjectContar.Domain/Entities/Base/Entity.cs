@@ -16,11 +16,6 @@ namespace ProjectContar.Domain.Entities.Base
         /// <summary>
         /// Date of Entity last modify.
         /// </summary>
-        public DateTime ModifiedDate { get; set; }
-
-        /// <summary>
-        /// Entity Id.
-        /// </summary>
-        public long Id { get; set; }
+        public DateTime ModifiedDate { get; set; }        
     }
 }

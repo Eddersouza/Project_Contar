@@ -19,10 +19,5 @@ namespace ProjectContar.WebApp.ViewModels.AccountPayables
         /// Represents the Account Payable data.
         /// </summary>
         public AccountPayableItem Item { get; set; }
-
-        /// <summary>
-        /// Message to page actions.
-        /// </summary>
-        public MessageView Message { get; set; }
     }
 }

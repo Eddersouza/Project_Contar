@@ -49,13 +49,26 @@ namespace ProjectContar.App
             {
                 this._accountPayableRepository.Create(account);
                 created = this._accountPayableRepository.SaveChanges();
-
             }
 
             if (created)
                 account.EventNotification.Add(NewAccountPayableAdd);
 
             NotificationEntity = account;
+        }
+
+        public AccountPayable Get(
+            string name,
+            DateTime? dueDate)
+        {
+            AccountPayable accountToSearch
+                = new AccountPayable(name, dueDate);
+
+            if (accountToSearch.IsValid())
+                return this._accountPayableRepository.Get(
+                    new object[] { name, dueDate });
+
+            return null;
         }
     }
 }

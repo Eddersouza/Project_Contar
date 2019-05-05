@@ -17,12 +17,11 @@ namespace ProjectContar.Infra.EF.Maps
         {
             this.ToTable("TB_AccountPayable", "df_contar");
 
-            this.HasKey(acp => acp.Id);
-
-            this.Property(acp => acp.Id)
-                .HasColumnName("IdAccount")
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
-                .IsRequired();
+            this.HasKey(acp => new
+            {
+                acp.Name,
+                acp.DueDate
+            });
 
             this.Property(acp => acp.CreatedDate)
                 .HasColumnName("CreateDate")
@@ -33,11 +32,13 @@ namespace ProjectContar.Infra.EF.Maps
                 .IsRequired();
 
             this.Property(acp => acp.Name)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                 .HasColumnName("Name")
                 .HasMaxLength(AccountPayable.NameMaximunLength)
                 .IsRequired();
 
             this.Property(acp => acp.DueDate)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                 .HasColumnName("DueDate")
                 .IsRequired();
 

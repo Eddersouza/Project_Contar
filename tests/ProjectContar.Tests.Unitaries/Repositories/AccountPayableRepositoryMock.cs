@@ -22,12 +22,18 @@ namespace ProjectContar.Tests.Unitaries.Repositories
 
             mockAccountRepository
                 .Setup(ma => ma.Create(It.IsAny<AccountPayable>()))
-                .Returns((AccountPayable entity) =>
+                .Callback((AccountPayable entity) =>
                 {
                     Accounts.Add(entity);
-
-                    return true;
                 });
+
+            mockAccountRepository
+               .Setup(ma => ma.SaveChanges())
+               .Returns(() =>
+               {
+                   return true;
+               });
+
             return mockAccountRepository;
         }
     }

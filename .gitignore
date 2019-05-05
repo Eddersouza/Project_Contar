@@ -7,3 +7,7 @@
 /tests/ProjectContar.Tests.Unitaries/bin
 /app/ProjectContar.WebApp/obj
 /app/ProjectContar.WebApp/bin
+/app/ProjectContar.IoC/bin
+/app/ProjectContar.IoC/obj
+/app/ProjectContar.Infra.EF/obj
+/app/ProjectContar.Infra.EF/bin

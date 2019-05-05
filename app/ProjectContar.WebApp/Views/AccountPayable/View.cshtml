@@ -1,0 +1,38 @@
+﻿@using ProjectContar.WebApp.ViewModels.AccountPayables
+
+@model AccountPayableNewPage
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title custom-panel-title">Conta a Pagar</h2>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="input-field col-md-6 col-sm-12">
+                @Html.TextBoxFor(model => model.Item.Name, new { @class = "tooltipped", @data_position = "top", id = "Account_Name", @maxlength = "20", @data_tooltip = "Nome da Conta", disabled="disabled" })
+                @Html.LabelFor(model => model.Item.Name)
+            </div>        
+            <div class="input-field col-md-6 col-sm-12">
+                @Html.TextBoxFor(model => model.Item.DueDate, new { @class = "tooltipped", data_position = "top", id = "Account_DueDate", data_tooltip = "Data de Vencimento da Conta", disabled = "disabled" })
+                @Html.LabelFor(model => model.Item.DueDate)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col-md-6 col-sm-12">
+                @Html.TextBoxFor(model => model.Item.Amount, new { @class = "tooltipped", data_position = "top", id = "Account_Amount", data_tooltip = "Valor da Conta", disabled = "disabled" })
+                @Html.LabelFor(model => model.Item.Amount)
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <a class="btn tooltipped" data-position="top" id="clear_AccountPayable" data-tooltip="Ir para formulário de Nova Conta a Pagar." href="@Url.Action("New")">
+            <i class="fas fa-arrow-left">&nbsp;&nbsp;</i>Nova Conta A Pagar
+        </a>        
+    </div>
+</div>

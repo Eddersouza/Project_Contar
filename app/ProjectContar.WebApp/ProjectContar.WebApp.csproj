@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorConfig.cs" />
     <Compile Include="Controllers\AccountPayableController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,6 +217,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\AccountPayable\New.cshtml" />
     <Content Include="Views\Shared\_Messages.cshtml" />
+    <Content Include="Views\AccountPayable\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

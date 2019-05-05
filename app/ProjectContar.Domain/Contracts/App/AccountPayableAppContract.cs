@@ -1,4 +1,5 @@
 ﻿using edrsys.EventNotification.Contracts;
+using ProjectContar.Domain.Entities;
 using System;
 
 namespace ProjectContar.Domain.Contracts.App
@@ -19,5 +20,15 @@ namespace ProjectContar.Domain.Contracts.App
             string name,
             DateTime? dueDate,
             decimal amount);
+
+        /// <summary>
+        /// Get Account Payable.
+        /// </summary>
+        /// <param name="name">Account Name</param>
+        /// <param name="dueDate">Account Due Date.</param>
+        /// <returns>Account Payable in system.</returns>
+        AccountPayable Get(
+            string name,
+            DateTime? dueDate);
     }
 }
