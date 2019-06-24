@@ -106,10 +106,11 @@ namespace ProjectContar.WebApp.Controllers
                     name,
                     dueDate.ToNullableDate());
 
-                view.Item = new AccountPayableItem(
-                    account.Name,
-                    account.DueDate.Value,
-                    account.Amount);
+                if (account != null)
+                    view.Item = new AccountPayableItem(
+                        account.Name,
+                        account.DueDate.Value,
+                        account.Amount);
 
                 this.AddMessage(new MessageView(this._accountPayableApp));
             }

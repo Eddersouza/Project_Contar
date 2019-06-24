@@ -33,6 +33,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\AppResultContract.cs" />
     <Compile Include="Contracts\App\AccountPayableAppContract.cs" />
     <Compile Include="Contracts\Repositories\AccountPayableRepositoryContract.cs" />
     <Compile Include="Contracts\Repositories\BaseRepositoryContract.cs" />

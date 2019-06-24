@@ -64,11 +64,20 @@ namespace ProjectContar.App
             AccountPayable accountToSearch
                 = new AccountPayable(name, dueDate);
 
+            AccountPayable account = null;
+
             if (accountToSearch.IsValid())
-                return this._accountPayableRepository.Get(
+                account = this._accountPayableRepository.Get(
                     new object[] { name, dueDate });
 
-            return null;
+            if (account == null)
+                accountToSearch.EventNotification.Add(new EventNotificationDescription(
+                "Nenhuma conta {0}, com vencimento em {1}.",
+                new EventNotificationWarning(), name, dueDate.HasValue ? dueDate.Value.ToShortDateString() : string.Empty));
+
+            NotificationEntity = accountToSearch;
+            
+            return account;
         }
     }
 }
